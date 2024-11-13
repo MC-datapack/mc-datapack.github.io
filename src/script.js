@@ -3,21 +3,21 @@ const mcVersions = [
     "1.17 - 1.17.1", "1.18 - 1.18.1", "1.18.2", "1.19 - 1.19.1", "1.19.2 - 1.19.4", 
     "1.20 - 1.20.1", "1.20.2", "1.20.3 - 1.20.4", "1.20.5 - 1.20.6", "1.21 - 1.21.1",
     "1.21.2 - 1.21.3", "1.21.4"
-]
+];
 
 document.addEventListener('DOMContentLoaded', () => {
     const heading = document.querySelector('h1');
-    heading.textContent = 'This website is all about Minecraft Datapacks/Resourcepacks.'
+    heading.textContent = 'This website is all about Minecraft Datapacks/Resourcepacks.';
 
     //const button = document.createElement('button');
     //button.textContent = "Get Started";
     //button.addEventListener('click', () => {
-    //    
+    //    alert('Button clicked!');
     //});
 
     const select = document.createElement('select');
 
-    options.forEach(optionText => {
+    mcVersions.forEach(optionText => {
         const option = document.createElement('option');
         option.value = optionText.toLowerCase().replace(/\s+/g, '');
         option.textContent = optionText;
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const selectContainer = document.getElementById('select-container');
-    selectContainer.appendChild(option);
+    selectContainer.appendChild(select);
 
-    document.body.appendChild(button);
-})
+    //document.body.appendChild(button);
+});
