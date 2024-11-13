@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const heading = document.querySelector('h1');
+    if (heading != null)
     heading.textContent = 'This website is all about Minecraft Datapacks/Resourcepacks.'
 
     const button = document.createElement('button');
