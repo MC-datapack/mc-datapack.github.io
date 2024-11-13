@@ -9,12 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const heading = document.querySelector('h1');
     heading.textContent = 'This website is all about Minecraft Datapacks/Resourcepacks.';
 
-    //const button = document.createElement('button');
-    //button.textContent = "Get Started";
-    //button.addEventListener('click', () => {
-    //    alert('Button clicked!');
-    //});
-
     const select = document.createElement('select');
 
     mcVersions.forEach(optionText => {
@@ -26,6 +20,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const selectContainer = document.getElementById('select-container');
     selectContainer.appendChild(select);
-
-    //document.body.appendChild(button);
 });
