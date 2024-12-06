@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    alert(`This page is still in development.`)
+    
     const heading = document.createElement('h1');
     heading.textContent = 'This website is all about Minecraft Datapacks/Resourcepacks.';
     document.body.appendChild(heading);
