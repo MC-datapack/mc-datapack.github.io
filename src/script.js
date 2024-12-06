@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     select.addEventListener('change', (event) => {
-        const selectedVersion = (event.target as HTMLSelectElement).value;
+        const selectedVersion = event.target.value;
         description.textContent = versionTexts[selectedVersion] || "No description available.";
     });
 
