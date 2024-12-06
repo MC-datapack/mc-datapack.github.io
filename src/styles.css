@@ -17,6 +17,10 @@ h1 {
     color: darkgreen;
 }
 
+#description {
+    display: inline;
+}
+
 select {
     padding: 10px;
     font-size: 16px;
