@@ -46,6 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
         select.appendChild(option);
     });
 
+    select.selectedIndex(16);
+    const selectedVersion = event.target.value;
+    description.textContent = versionTexts[selectedVersion] || "No description available.";
     select.addEventListener('change', (event) => {
         const selectedVersion = event.target.value;
         description.textContent = versionTexts[selectedVersion] || "No description available.";
