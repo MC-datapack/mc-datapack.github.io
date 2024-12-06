@@ -46,12 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         select.appendChild(option);
     });
 
-    select.selectedIndex(16);
-    const selectedVersion = event.target.value;
-    description.textContent = versionTexts[selectedVersion] || "No description available.";
-    select.addEventListener('change', (event) => {
-        const selectedVersion = event.target.value;
-        description.textContent = versionTexts[selectedVersion] || "No description available.";
+    select.selectedIndex = 16;
+    const initialSelectedVersion = select.value; 
+    description.textContent = versionTexts[initialSelectedVersion] || "No description available.";
+
+    select.addEventListener('change', (event) => { 
+        const selectedVersion = event.target.value; 
+        description.textContent = versionTexts[selectedVersion] || "No description available."; 
     });
 
     selectContainer.appendChild(select);
