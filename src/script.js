@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    alert(`This page is still in development.`)
-    
     const heading = document.createElement('h1');
     heading.textContent = 'This website is all about Minecraft Datapacks/Resourcepacks.';
     document.body.appendChild(heading);
@@ -14,9 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     description.id = 'version-description';
     document.body.appendChild(description);
 
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.id = 'buttons-container';
-    document.body.appendChild(buttonsContainer);
+    const datapacksContainer = document.createElement('div');
+    datapacksContainer.id = 'datapacks-container';
+    document.body.appendChild(datapacksContainer);
+
+    const resourcepacksContainer = document.createElement('div');
+    resourcepacksContainer.id = 'resourcepacks-container';
+    document.body.appendChild(resourcepacksContainer);
 
     const mcVersions = [
     "1.21.4", "1.21.2 - 1.21.3", "1.21 - 1.21.1", 
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         select.appendChild(option);
     });
 
-    select.selectedIndex = 16;
+    select.selectedIndex = 0;  // Automatically select the latest version
     const initialSelectedVersion = select.value; 
     description.textContent = versionTexts[initialSelectedVersion] || "No description available.";
     updateButtons(initialSelectedVersion);
@@ -71,21 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
     selectContainer.appendChild(select);
 
     function updateButtons(version) {
-        buttonsContainer.innerHTML = ''; // Clear previous buttons
+        datapacksContainer.innerHTML = ''; // Clear previous Datapack buttons
+        resourcepacksContainer.innerHTML = ''; // Clear previous Resourcepack buttons
 
         const datapackButton = document.createElement('button');
-        datapackButton.textContent = `Datapacks for ${version}`;
+        datapackButton.textContent = `Datapack for ${version}`;
         datapackButton.addEventListener('click', () => {
-            alert(`Loading Datapacks for ${version}`);
+            alert(`Loading Datapack for ${version}`);
         });
 
         const resourcepackButton = document.createElement('button');
-        resourcepackButton.textContent = `Resourcepacks for ${version}`;
+        resourcepackButton.textContent = `Resourcepack for ${version}`;
         resourcepackButton.addEventListener('click', () => {
-            alert(`Loading Resourcepacks for ${version}`);
+            alert(`Loading Resourcepack for ${version}`);
         });
 
-        buttonsContainer.appendChild(datapackButton);
-        buttonsContainer.appendChild(resourcepackButton);
+        datapacksContainer.appendChild(datapackButton);
+        resourcepacksContainer.appendChild(resourcepackButton);
     }
 });
