@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         select.appendChild(option);
     });
 
-    select.selectedIndex = 0;  // Automatically select the latest version
+    select.selectedIndex = 0; 
     const initialSelectedVersion = select.value; 
     description.textContent = versionTexts[initialSelectedVersion] || "No description available.";
     updateButtons(initialSelectedVersion);
@@ -73,22 +73,25 @@ document.addEventListener('DOMContentLoaded', () => {
     selectContainer.appendChild(select);
 
     function updateButtons(version) {
-        datapacksContainer.innerHTML = ''; // Clear previous Datapack buttons
-        resourcepacksContainer.innerHTML = ''; // Clear previous Resourcepack buttons
-
+        datapacksContainer.innerHTML = '';
+        resourcepacksContainer.innerHTML = '';
+    
         const datapackButton = document.createElement('button');
+        datapackButton.className = 'datapack-button';
         datapackButton.textContent = `Datapack for ${version}`;
         datapackButton.addEventListener('click', () => {
             alert(`Loading Datapack for ${version}`);
         });
-
+    
         const resourcepackButton = document.createElement('button');
+        resourcepackButton.className = 'resourcepack-button';
         resourcepackButton.textContent = `Resourcepack for ${version}`;
         resourcepackButton.addEventListener('click', () => {
             alert(`Loading Resourcepack for ${version}`);
         });
-
+    
         datapacksContainer.appendChild(datapackButton);
         resourcepacksContainer.appendChild(resourcepackButton);
     }
+    
 });
