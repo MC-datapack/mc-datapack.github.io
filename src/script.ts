@@ -1,4 +1,4 @@
-import versionTexts from './versionTexts.ts';
+import versionTexts from './versionTexts';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Create and append the heading
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectContainer.id = 'select-container';
     document.body.appendChild(selectContainer);
 
-    const mcVersions = [
+    const mcVersions: string[] = [
         "1.13 - 1.13.2", "1.14 - 1.14.4", "1.15 - 1.15.2", "1.16 - 1.16.1", "1.16.2 - 1.16.5",
         "1.17 - 1.17.1", "1.18 - 1.18.1", "1.18.2", "1.19 - 1.19.1", "1.19.2 - 1.19.4", 
         "1.20 - 1.20.1", "1.20.2", "1.20.3 - 1.20.4", "1.20.5 - 1.20.6", "1.21 - 1.21.1",
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     description.id = 'version-description';
     document.body.appendChild(description);
 
-    mcVersions.forEach(optionText => {
+    mcVersions.forEach((optionText: string) => {
         const option = document.createElement('option');
         option.value = optionText;
         option.textContent = optionText;
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     select.addEventListener('change', (event) => {
-        const selectedVersion = event.target.value;
+        const selectedVersion = (event.target as HTMLSelectElement).value;
         description.textContent = versionTexts[selectedVersion] || "No description available.";
     });
 

@@ -1,4 +1,4 @@
-const versionTexts = {
+const versionTexts: { [key: string]: string } = {
     "1.13 - 1.13.2": "Text for version 1.13 - 1.13.2",
     "1.14 - 1.14.4": "Text for version 1.14 - 1.14.4",
     "1.15 - 1.15.2": "Text for version 1.15 - 1.15.2",
