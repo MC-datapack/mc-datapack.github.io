@@ -21,15 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(resourcepacksContainer);
 
     const mcVersions = [
-    "1.21.4", "1.21.2 - 1.21.3", "1.21 - 1.21.1", 
-    "1.20.5 - 1.20.6", "1.20.3 - 1.20.4", "1.20.2", "1.20 - 1.20.1", 
-    "1.19.4", "1.19 - 1.19.3", 
-    "1.18.2", "1.18 - 1.18.1", 
-    "1.17 - 1.17.1", 
-    "1.16.2 - 1.16.5", "1.16 - 1.16.1", 
-    "1.15 - 1.15.2", 
-    "1.14 - 1.14.4", 
-    "1.13 - 1.13.2"
+        "1.21.4", "1.21.2 - 1.21.3", "1.21 - 1.21.1", 
+        "1.20.5 - 1.20.6", "1.20.3 - 1.20.4", "1.20.2", "1.20 - 1.20.1", 
+        "1.19.4", "1.19 - 1.19.3", 
+        "1.18.2", "1.18 - 1.18.1", 
+        "1.17 - 1.17.1", 
+        "1.16.2 - 1.16.5", "1.16 - 1.16.1", 
+        "1.15 - 1.15.2", 
+        "1.14 - 1.14.4", 
+        "1.13 - 1.13.2"
     ];
 
     const versionTexts = {
@@ -79,19 +79,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const datapackButton = document.createElement('button');
         datapackButton.className = 'datapack-button';
         datapackButton.textContent = `Datapack for ${version}`;
-        datapackButton.addEventListener('click', () => {
-            alert(`Loading Datapack for ${version}`);
-        });
+        datapackButton.addEventListener('click', loadDatapack);
     
         const resourcepackButton = document.createElement('button');
         resourcepackButton.className = 'resourcepack-button';
         resourcepackButton.textContent = `Resourcepack for ${version}`;
-        resourcepackButton.addEventListener('click', () => {
-            alert(`Loading Resourcepack for ${version}`);
-        });
+        resourcepackButton.addEventListener('click', loadResourcepack);
     
         datapacksContainer.appendChild(datapackButton);
         resourcepacksContainer.appendChild(resourcepackButton);
+
+        loadVersionScript(version);
     }
-    
+
+    function loadVersionScript(version) {
+        const script = document.createElement('script');
+        script.src = `src/versions/${version.replace(/\./g, '_').replace(/ - /g, '-')}.js`; // Generate the script path
+        document.body.appendChild(script);
+    }
 });
