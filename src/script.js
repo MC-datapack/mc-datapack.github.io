@@ -1,3 +1,5 @@
+import versionTexts from './versionTexts.ts';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Create and append the heading
     const heading = document.createElement('h1');
@@ -17,11 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const select = document.createElement('select');
+    const description = document.createElement('p');
+    description.id = 'version-description';
+    document.body.appendChild(description);
+
     mcVersions.forEach(optionText => {
         const option = document.createElement('option');
-        option.value = optionText.toLowerCase().replace(/\s+/g, '');
+        option.value = optionText;
         option.textContent = optionText;
         select.appendChild(option);
+    });
+
+    select.addEventListener('change', (event) => {
+        const selectedVersion = event.target.value;
+        description.textContent = versionTexts[selectedVersion] || "No description available.";
     });
 
     selectContainer.appendChild(select);
