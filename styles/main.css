@@ -17,8 +17,10 @@ h1 {
     color: darkgreen;
 }
 
-#description {
-    display: inline;
+#version-description {
+    margin: 20px 0; 
+    font-size: 16px; 
+    color: #555;
 }
 
 select {

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "1.20 - 1.20.1", "1.20.2", "1.20.3 - 1.20.4", "1.20.5 - 1.20.6", "1.21 - 1.21.1",
         "1.21.2 - 1.21.3", "1.21.4"
     ];
-    
+
     const versionTexts = {
         "1.13 - 1.13.2": "Text for version 1.13 - 1.13.2",
         "1.14 - 1.14.4": "Text for version 1.14 - 1.14.4",
