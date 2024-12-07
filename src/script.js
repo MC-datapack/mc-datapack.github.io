@@ -96,5 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const script = document.createElement('script');
         script.src = `src/versions/${version.replace(/\./g, '_').replace(/ - /g, '-')}.js`; // Generate the script path
         document.body.appendChild(script);
+
+        script.onload = () => {
+            console.log(`Script loaded: ${script.src}`);
+        };
+
+        script.onerror = () => {
+            console.error(`Failed to load script: ${script.src}`);
+        };
     }
 });
