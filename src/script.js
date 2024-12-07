@@ -82,12 +82,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const datapackButton = document.createElement('button');
             datapackButton.className = 'datapack-button';
             datapackButton.textContent = `Datapack for ${version}`;
-            datapackButton.addEventListener('click', loadDatapack);
+            datapackButton.addEventListener('click', (event) => {
+                loadDatapack();
+                description.remove();
+            });
         
             const resourcepackButton = document.createElement('button');
             resourcepackButton.className = 'resourcepack-button';
             resourcepackButton.textContent = `Resourcepack for ${version}`;
-            resourcepackButton.addEventListener('click', loadResourcepack);
+            resourcepackButton.addEventListener('click', (event) => {
+                loadDatapack();
+                description.remove();
+            });
         
             datapacksContainer.appendChild(datapackButton);
             resourcepacksContainer.appendChild(resourcepackButton);
