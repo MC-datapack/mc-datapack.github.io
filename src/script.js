@@ -76,33 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
         datapacksContainer.innerHTML = '';
         resourcepacksContainer.innerHTML = '';
     
-        const datapackButton = document.createElement('button');
-        datapackButton.className = 'datapack-button';
-        datapackButton.textContent = `Datapack for ${version}`;
-        datapackButton.addEventListener('click', loadDatapack);
-    
-        const resourcepackButton = document.createElement('button');
-        resourcepackButton.className = 'resourcepack-button';
-        resourcepackButton.textContent = `Resourcepack for ${version}`;
-        resourcepackButton.addEventListener('click', loadResourcepack);
-    
-        datapacksContainer.appendChild(datapackButton);
-        resourcepacksContainer.appendChild(resourcepackButton);
-
-        loadVersionScript(version);
-    }
-
-    function loadVersionScript(version) {
         const script = document.createElement('script');
-        script.src = `src/versions/${version.replace(/\./g, '_').replace(/ - /g, '-')}.js`; // Generate the script path
-        document.body.appendChild(script);
-
+        script.src = `src/versions/${version.replace(/\./g, '_').replace(/ - /g, '-')}.js`;
         script.onload = () => {
-            console.log(`Script loaded: ${script.src}`);
+            const datapackButton = document.createElement('button');
+            datapackButton.className = 'datapack-button';
+            datapackButton.textContent = `Datapack for ${version}`;
+            datapackButton.addEventListener('click', loadDatapack);
+        
+            const resourcepackButton = document.createElement('button');
+            resourcepackButton.className = 'resourcepack-button';
+            resourcepackButton.textContent = `Resourcepack for ${version}`;
+            resourcepackButton.addEventListener('click', loadResourcepack);
+        
+            datapacksContainer.appendChild(datapackButton);
+            resourcepacksContainer.appendChild(resourcepackButton);
         };
 
         script.onerror = () => {
             console.error(`Failed to load script: ${script.src}`);
         };
+
+        document.body.appendChild(script);
     }
 });
