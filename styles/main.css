@@ -2,19 +2,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #4b4b4b;
     text-align: center;
 }
 
 h1 {
-    color: #334;
+    color: rgb(128, 128, 187);
 }
 
 #select-container { 
     display: flex; 
     justify-content: center; 
     margin-top: 20px; 
-    color: darkgreen;
+    color: rgb(130, 221, 130);
 }
 
 #version-description {
@@ -50,6 +50,10 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+p {
+    color: rgb(128, 128, 187);
 }
 
 .datapack-button {

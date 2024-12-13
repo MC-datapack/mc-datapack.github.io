@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
             datapackButton.textContent = `Datapack for ${version}`;
             datapackButton.addEventListener('click', (event) => {
                 loadDatapack();
-                description.remove();
             });
         
             const resourcepackButton = document.createElement('button');
@@ -92,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
             resourcepackButton.textContent = `Resourcepack for ${version}`;
             resourcepackButton.addEventListener('click', (event) => {
                 loadDatapack();
-                description.remove();
             });
         
             datapacksContainer.appendChild(datapackButton);
